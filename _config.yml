@@ -485,7 +485,7 @@ vkontakte_api:
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
 rating:
-  enable: false
+  enable: true
   id:     14209
   color:  fc6423
 
@@ -493,7 +493,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
+  enable: true
   app_id: Xv5afMHVTa5bwMU8JrxCxKrh-gzGzoHsz
   app_key: zQIVSdjD3rCzUVFOHRnaEdmj
 
