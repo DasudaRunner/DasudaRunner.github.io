@@ -9,10 +9,9 @@ tag:
 - 阿里云
 ---
 
-<br>
-- 本文为Haibo原创文章，转载请注明：[Haibo的主页](https://dasuda.top)
+本文为Haibo原创文章，转载请注明：[Haibo的主页](https://dasuda.top)
 
-- 如果对本站的文章有疑问或者有合作需求的，可以联系QQ: 827091497，或者发送邮件到：[haibo.david@qq.com](mailto:haibo.david@qq.com) 。
+如果对本站的文章有疑问或者有合作需求的，可以联系QQ: 827091497，或者发送邮件到：[haibo.david@qq.com](mailto:haibo.david@qq.com) 。
 
 <br>
 ### 正文：
