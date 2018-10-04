@@ -405,7 +405,7 @@ changyan:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: #MTAyMC80MDExOC8xNjY0NQ==
+livere_uid: MTAyMC80MDExOC8xNjY0NQ==
 
 # Support for gitalk comments system.
 gitalk:
