@@ -5,17 +5,10 @@ date: 2018-09-26
 TensorFlow
 ---
 
-<br>
-- 本文为Haibo原创文章，转载请注明：[Haibo的主页](https://dasuda.top)
-
-- 如果对本站的文章有疑问或者有合作需求的，可以联系QQ: 827091497，或者发送邮件到：[haibo.david@qq.com](mailto:haibo.david@qq.com) 。
-
-### 操作前的几句话
-
 我本来的环境是`cuda8.0`+`cudnn6.0`+`driver384.130`+`tensorflow-gpu==1.4`。
 真是逼着你升级，我已经坚持1.4很久了，但是很多新的特性不能用，无奈只能升级，不然的话谁愿意折腾，其中显卡驱动不需要变。
 
-#### **卸载cuda8.0及cudnn6.0**
+### 卸载cuda8.0及cudnn6.0
 
 ```bash
 sudo apt-get remove cuda 
@@ -30,13 +23,13 @@ sudo rm -r cuda-9.1
 ```
 其实上面已经卸载完cuda和cudnn，用库方式配置过cudnn的都知道，cudnn只是一个头文件和一堆链接库，在cuda文件夹里，删除即可。
 
-#### **卸载nvidia-cuda-toolkit**
+### 卸载nvidia-cuda-toolkit
 
 ```bash
 sudo apt-get autoremove nvidia-cuda-toolkit
 ```
 
-#### **下载cuda9.0和cudnn7.1.4**
+### 下载cuda9.0和cudnn7.1.4
 
 - 下载需要nvidia开发者账号
 
@@ -44,7 +37,7 @@ sudo apt-get autoremove nvidia-cuda-toolkit
 
 - 其中cudnn选择`cuDNN v7.1.4 Library for Linux`下载，下来为压缩文件。
 
-#### **安装cuda9.0及cudnn7.1.4**
+### 安装cuda9.0及cudnn7.1.4
 
 - cuda安装
 
@@ -80,13 +73,13 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp -a cuda/lib64/libcudnn* /usr/local/cuda/lib64
 ```
 
-#### **安装nvidia-cuda-toolkit**
+### 安装nvidia-cuda-toolkit
 
 ```bash
 sudo apt-get install nvidia-cuda-toolkit
 ```
 
-#### **验证**
+### 验证
 
 ```bash
 nvcc -V #最后一行可显示cuda版本，可验证是否安装成功

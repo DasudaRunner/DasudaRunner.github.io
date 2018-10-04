@@ -9,6 +9,7 @@ tag:
 - TX2
 - TensorFlow
 ---
+
 这是在2017年12月份时候用TX2做目标跟踪时，搭建的深度学习系统，奈何TX2的运算能力还是不太够，
 就没在继续再使用这个平台了
 
@@ -23,9 +24,11 @@ tag:
 - 推荐安装jupyter notebook。
 
 ### 注意事项：
+
 - 编译前增加swap空间为8G。
 
 - 测试程序记得配置session：
+
 ```python
 sess =tf.Session(config=tf.ConfigProto(log_device_placement=True,allow_soft_placement=True))
 ```
