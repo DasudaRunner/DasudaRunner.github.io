@@ -2,7 +2,11 @@
 layout: post
 title: "卸载cuda8和cudnn6以及安装cuda9和cudnn7"
 date: 2018-09-26
-TensorFlow
+categories:
+- TensorFlow
+tag:
+- TensorFlow
+- CUDA
 ---
 
 我本来的环境是`cuda8.0`+`cudnn6.0`+`driver384.130`+`tensorflow-gpu==1.4`。
