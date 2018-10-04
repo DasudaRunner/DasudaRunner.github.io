@@ -16,6 +16,7 @@ tag:
 
 我是从阿里云购买的域名dasuda.top（其实haibo.lnk也挺便宜的），买了三年，花费55元，想着刚好硕士三年，等毕业后找到工作了，是不续费还是续费，到时候看这个域名的价值吧。
 
+<img src='/assets/images/posts/GithubPages/1.jpg'>
 ![](/assets/images/posts/GithubPages/1.jpg)
 
 ### **2、查看GithubPages的IP**
