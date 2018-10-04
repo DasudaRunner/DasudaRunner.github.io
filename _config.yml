@@ -214,7 +214,7 @@ font:
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
   GitHub: https://github.com/DasudaRunner
-  ZhiHu: https://www.zhihu.com/people/dasuda/activities
+  知乎: https://www.zhihu.com/people/dasuda/activities
 
 
 # Social Links Icons
@@ -228,7 +228,7 @@ social_icons:
   # KeyMapsToSocialItemKey: NameOfTheIconFromFontAwesome
   GitHub: github
   #Weibo: weibo
-  ZhiHu: android
+  知乎: android
 
 
 # Sidebar Avatar
