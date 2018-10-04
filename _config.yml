@@ -118,9 +118,9 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
+  archives: /archives/
   categories: /categories/
   about: /about/
-  archives: /archives/
   #tags: /tags/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
@@ -405,7 +405,7 @@ changyan:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: #MTAyMC80MDExOC8xNjY0NQ
+#livere_uid: #MTAyMC80MDExOC8xNjY0NQ
 
 # Support for gitalk comments system.
 gitalk:

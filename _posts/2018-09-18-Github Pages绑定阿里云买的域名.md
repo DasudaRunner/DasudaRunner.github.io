@@ -9,9 +9,8 @@ tag:
 - 阿里云
 ---
 
-本文为Haibo原创文章，转载请注明：[Haibo的主页](https://dasuda.top)
-
-如果对本站的文章有疑问或者有合作需求的，可以联系QQ: 827091497，或者发送邮件到：[haibo.david@qq.com](mailto:haibo.david@qq.com) 。
+使用Github Pages搭建完博客之后，总觉得用原始的域名太长了，又听说在阿里云注册新域名也挺便宜的，
+索性就买了一个域名，三年才五十多块，也不贵，本文记录了将新买的域名解析到Github Pages所在的IP。
 
 <br>
 ### 正文：
