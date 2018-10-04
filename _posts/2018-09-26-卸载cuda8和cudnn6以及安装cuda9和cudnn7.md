@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "卸载cuda8.0及cudnn6.0 安装cuda9.0和cudnn7.0"
+title: "卸载cuda8和cudnn6以及安装cuda9和cudnn7"
 date: 2018-09-26
 TensorFlow
 ---
