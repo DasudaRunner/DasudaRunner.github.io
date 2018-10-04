@@ -17,7 +17,6 @@ tag:
 我是从阿里云购买的域名dasuda.top（其实haibo.lnk也挺便宜的），买了三年，花费55元，想着刚好硕士三年，等毕业后找到工作了，是不续费还是续费，到时候看这个域名的价值吧。
 
 <img src='/assets/images/posts/GithubPages/1.jpg'>
-![](/assets/images/posts/GithubPages/1.jpg)
 
 ### **2、查看GithubPages的IP**
 &emsp;&emsp;有趣的是在这，按照网上99%的教程都是说在域名解析里面新建两条记录，记录类型为A，记录值为ping username.github.io查到的IP，但是当你连续ping的时候会发现，IP是不固定的，最后在[Setting up an apex domain](https://help.github.com/articles/setting-up-an-apex-domain/)知道，GithubPages服务器现在的IP为4个：
@@ -29,7 +28,7 @@ tag:
 ```
 所以以前的ping方法不适用了，至少没有直接查看[Setting up an apex domain](https://help.github.com/articles/setting-up-an-apex-domain/)网页更方便、更准确了，那么域名解析里面的条目就需要添加8个。另外记录类型为CHAME，记录值为username.github.io，经测试不成功。
 
-<img src="/images/posts/GithubPages/2.jpg"/>
+<img src="/assets/images/posts/GithubPages/2.jpg"/>
 <br>
 #### **3、网站根目录CHAME文件设置**
 
