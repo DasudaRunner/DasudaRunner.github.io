@@ -2,6 +2,7 @@
 <div id="posts" class="posts-expand">
   {% assign post = page %}
   {% include _macro/post.html %}
+  {{ page.content | number_of_words }}
   <div class="post-spread">
     {% if site.jiathis %}
       {% include _partials/share/jiathis.html %}
