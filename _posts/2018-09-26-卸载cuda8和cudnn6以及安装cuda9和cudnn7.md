@@ -77,7 +77,7 @@ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp -a cuda/lib64/libcudnn* /usr/local/cuda/lib64
 ```
 
-### 安装nvidia-cuda-toolkit(10月5号修正：此步骤不需要，详见[安装、编译踩坑](https://dasuda.top/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/2018/10/01/%E5%AE%89%E8%A3%85-%E7%BC%96%E8%AF%91%E8%B8%A9%E5%9D%91/)中的**nvcc -V显示版本和实际安装版本不一致**问题)
+### 安装nvidia-cuda-toolkit *(10月5号修正：此步骤不需要，详见[安装、编译踩坑](https://dasuda.top/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/2018/10/01/%E5%AE%89%E8%A3%85-%E7%BC%96%E8%AF%91%E8%B8%A9%E5%9D%91/)中的"nvcc -V显示版本和实际安装版本不一致"问题)*
 
 ```bash
 sudo apt-get install nvidia-cuda-toolkit
