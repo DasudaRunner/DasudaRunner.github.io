@@ -23,7 +23,7 @@ sudo apt-get remove cuda*
 
 cd /usr/local/
 
-sudo rm -r cuda-9.1
+sudo rm -r cuda-8.0
 ```
 其实上面已经卸载完cuda和cudnn，用库方式配置过cudnn的都知道，cudnn只是一个头文件和一堆链接库，在cuda文件夹里，删除即可。
 
