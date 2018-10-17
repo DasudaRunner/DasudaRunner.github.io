@@ -13,6 +13,7 @@ tag:
 
 ### cudaMalloc
 **函数原型：**`extern __host__ __cudart_builtin__ cudaError_t CUDARTAPI cudaMalloc(void **devPtr, size_t size);`
+
 **用法：**
 ```cpp
 int* gpudata；
@@ -25,14 +26,23 @@ cudaMalloc((void**)&gpudata, sizeof(int)*1024);
 
 ### cudaDeviceProp结构体
 **name[256]：**保存GPU的名字，例如：GeForce GTX 1070
+
 **totalGlobalMem：**我们通常说的显存，例如GTX 1070 8G为 8504868864 bytes
+
 **sharedMemPerBlock：**block中share memory的大小，速度比全局存储空间快，例如GTX 1070 8G为 49152 bytes
+
 **regsPerBlock：**block中register memory的大小，里面存储的寄存器
+
 **warpSize：**线程束大小
+
 **maxThreadsPerBlock：**每个block最多的thread数量
+
 **maxThreadsDim[3]：**block每个维度的最大值
+
 **maxGridSize[3]：**grid每个维度的最大值
+
 **clockRate：**GPU的时钟频率
+
 **multiProcessorCount：**GPU上SM的数量，说实话老黄真是一个好刀客，本来性能就不行，还不停地砍性能
 
 
