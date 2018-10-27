@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CMakeLists文件入门"
+title: "CMakeLists快速入门"
 date: 2018-10-25
 categories:
 - 程序员的基本素养
