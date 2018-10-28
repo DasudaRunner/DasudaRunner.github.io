@@ -12,12 +12,12 @@ tag:
 
 ### 最简单的CMakeLists
 本例只包含一个目录，所有的工程文件都在根目录，想当年，我把整个工程的源文件、头文件都放在根目录，就是为了CMakeLists.txt好写一点。
-
+```bash
 project/
 |— CMakeLists.txt
 |— main_1.cpp
 |— main_2.hpp
-
+```
 ```cmake
 #指定了cmake的最低版本
 cmake_minimum_required(VERSION 3.2)
@@ -29,14 +29,14 @@ add_executable(main main_1.cpp main_2.hpp)
 我猜，这可能是最简单的CMakeLists文件了吧。
 
 ### 增加工程文件
-
+```bash
 project/
 |— CMakeLists.txt
 |— main.cpp
 |— main_1.cpp
 ...
 |— main_100.cpp
-
+```
 假如像我之前一样，把工程的所有文件都放在一个目录下，如果还按照上面的写法把所有的源文件都列在add_executable中，不仅效率低，而且很不优雅。
 ```cmake
 #指定了cmake的最低版本
