@@ -72,10 +72,7 @@ cmake_minimum_required(VERSION 3.2)
 #工程名字，自己起的
 project(testProject)
 #生成可执行文件main，我们在后面将工程中用到的源文件和头文件列出来
-add_executable(main 
-			   main.cpp 
-			   function/func1.cpp 
-			   function/func1.hpp)
+add_executable(main main.cpp function/func1.cpp function/func1.hpp)
 ```
 这样完全OK的，但是不够优雅，你可以这样来写
 
