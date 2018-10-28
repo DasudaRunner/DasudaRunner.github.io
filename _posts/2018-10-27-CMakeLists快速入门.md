@@ -12,7 +12,7 @@ tag:
 
 ### 最简单的CMakeLists
 本例只包含一个目录，所有的工程文件都在根目录，想当年，我把整个工程的源文件、头文件都放在根目录，就是为了CMakeLists.txt好写一点。
-```bash
+```text
 project/
 |— CMakeLists.txt
 |— main_1.cpp
