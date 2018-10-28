@@ -90,9 +90,7 @@ add_subdirectory(function)
 include_directories(function)
 
 #生成可执行文件main，我们在后面将工程中用到的源文件和头文件列出来
-add_executable(main 
-			   main.cpp 
-			   )
+add_executable(main main.cpp)
 #新添加语句3
 target_link_libraries(main funcLib)
 ```
