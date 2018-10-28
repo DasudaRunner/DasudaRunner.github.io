@@ -61,8 +61,8 @@ project/
 | — CMakeLists.txt
 | — main.cpp
 | — function/
-&nbsp; &nbsp; &nbsp;  | — func1.cpp
-&nbsp; &nbsp; &nbsp;  | — func1.hpp
+    | — func1.cpp
+    | — func1.hpp
 ```
 这里我们将功能函数单独放在`function`目录下，使整个工程变得有条理一点，此时你的`CMakeLists.txt`可以这样写，仿照上面的例子。
 
