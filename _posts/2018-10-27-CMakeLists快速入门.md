@@ -97,12 +97,12 @@ target_link_libraries(main funcLib)
 ```cmake
 #将该目录下的所有的源文件名字保存在DIR_FUNC_SRCS中
 aux_source_directory(. DIR_FUNC_SRCS)
-#生成链接库，名字为funcLib 
+#生成链接库，名字为funcLib
 add_library(funcLib ${DIR_FUNC_SRCS})
 ```
 
 这里采用的思路是将`function`目录下的源文件作为链接库供工程使用，在根目录下的`CMakeLists.txt`中：
-- 新增语句1是告诉编译器工程还包含一个子目录`function`
+- 新增语句1是告诉编译器工程还包含一个子目录`function`，里面还有一个CmakeList文件，其实也就是告诉编译器先去编译那个子CmakeList文件。
 - 新增语句2添加了头文件目录，因为在`function`目录下含有工程使用的头文件，也就是说你在程序里`#include`本地头文件时，编译器搜索的目录，更直观一点说，没有这句，你在main里面应该这样写`#include "function/func1.hpp"`，如果你写了这句，则可以这样写`#include "func1.hpp"`，也就是编译器知道去哪里去找这个头文件。
 - 新增语句3是将生成的链接库`funcLib`链接到可执行文件上。
 
