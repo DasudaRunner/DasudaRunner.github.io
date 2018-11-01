@@ -12,7 +12,7 @@ tag:
 最近在用CUDA复现图像处理算法时，发现对threadIdx等这类基本概念还是模棱两可，故在此详细总结一下，加深印象。
 
 ### 看图说来
-<img src="/assets/images/posts/cuda/cuda.jpg"> 
+<img src="/assets/images/posts/idx/idx.jpg"> 
 
 图中，红色的小格子表示一个thread，黄色的2*2格子表示一个block，thread中的黑色数字x表示threadIdx.x，y表示threadIdx.y。block中的红色加粗x表示blockIdx.x，y表示blockIdx.y。
 
