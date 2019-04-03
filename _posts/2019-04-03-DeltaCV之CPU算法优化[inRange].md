@@ -41,6 +41,7 @@ void inRange(InputArray src, InputArray lowerb, InputArray upperb, OutputArray d
     int inRange(unsigned char *src, unsigned char *dst, int width, int height,deltaCV::scalar lower, deltaCV::scalar upper)
 ```
 其中`deltaCV::scalar`与`cv::Scalar`类似,定义见[DeltaCV](https://github.com/DasudaRunner/DeltaCV/blob/master/cpu/include/deltaCV/SIMD/DataTypes.hpp).
+
 ```cpp
 assert(lower.channels()==upper.channels());
 int channel = lower.channels();
@@ -65,7 +66,7 @@ int block = height * width  / blockSize;
 __m128i ch0_min_sse = _mm_setr_epi8(lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0],lower[0]);
 __m128i ch1_min_sse = _mm_setr_epi8(lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1],lower[1]);
 __m128i ch2_min_sse = _mm_setr_epi8(lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2],lower[2]);
- __m128i ch0_max_sse = _mm_setr_epi8(upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0]);
+__m128i ch0_max_sse = _mm_setr_epi8(upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0],upper[0]);
 __m128i ch1_max_sse = _mm_setr_epi8(upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1],upper[1]);
 __m128i ch2_max_sse = _mm_setr_epi8(upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2],upper[2]);
 ```
@@ -86,7 +87,7 @@ for(int i=0; i<block; ++i,src+=blockSize*channel,dst+=blockSize)
     Ch1 = _mm_or_si128(Ch1, _mm_shuffle_epi8(src2,_mm_setr_epi8(-1, -1, -1, -1, -1, 0, 3, 6, 9, 12, 15, -1, -1,-1, -1, -1)));
     Ch1 = _mm_or_si128(Ch1, _mm_shuffle_epi8(src3,_mm_setr_epi8(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 2, 5,8, 11, 14)));
 
-	__m128i Ch2 = _mm_shuffle_epi8(src1,_mm_setr_epi8(2, 5, 8, 11, 14, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1));
+    __m128i Ch2 = _mm_shuffle_epi8(src1,_mm_setr_epi8(2, 5, 8, 11, 14, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1));
     Ch2 = _mm_or_si128(Ch2, _mm_shuffle_epi8(src2,_mm_setr_epi8(-1, -1, -1, -1, -1, 1, 4, 7, 10, 13, -1, -1, -1,-1, -1, -1)));
     Ch2 = _mm_or_si128(Ch2, _mm_shuffle_epi8(src3,_mm_setr_epi8(-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0, 3, 6,9, 12, 15)));
     // 阈值判断
@@ -118,9 +119,11 @@ FOR j := 0 to 15
 ENDFOR
 ```
 其实说白了就是将a中的每一个字节进行重排**(但是需要注意的是,真正其索引作用的是每个字节的低4位,也就是索引值范围为0-15,这也是为什么`__mm_shuffle_epi8`不能配合`__m256i`类型数据使用,因为`__m256i`为32个字节,后面的16个字节无法选中,谨记!!!)**.
-比如`__m128i Ch0 = _mm_shuffle_epi8(src1, _mm_setr_epi8(0, 3, 6, 9, 12, 15, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1))`就是将src1的第1个元素放在第一位,第4个元素放在第二位,第7个元素放在第三位,以此类推.组成一个新的变量,-1表示该字节置0,用数组来表示的话,Ch0中的元素为{src1[0],src1[3],src1[6],src1[12],src1[15],0,0,0,0,0,0,0,0,0,0},这里你会发现,我们这样取正好是将src1中像素的第一个通道值取出来了.`Ch0 = _mm_or_si128(Ch0, _mm_shuffle_epi8(src2,_mm_setr_epi8(-1, -1, -1, -1, -1, -1, 2, 5, 8, 11, 14, -1, -1,-1, -1, -1)));`又把src2中的像素的第一通道值取出来,然后与前面求得的在进行与操作,所以现在Ch0中储存的就是src1和src2中的像素的第一个通道值,最后我们在把src3中的也取出来进行与操作,此时Ch0中就包含了本次循环所有处理像素的第一通道的值.
-接下来的Ch1,Ch2也是分别储存了第二,三通道的像素值.
+
+比如`__m128i Ch0 = _mm_shuffle_epi8(src1, _mm_setr_epi8(0, 3, 6, 9, 12, 15, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1))`就是将src1的第1个元素放在第一位,第4个元素放在第二位,第7个元素放在第三位,以此类推.组成一个新的变量,-1表示该字节置0,用数组来表示的话,Ch0中的元素为{src1[0],src1[3],src1[6],src1[12],src1[15],0,0,0,0,0,0,0,0,0,0},这里你会发现,我们这样取正好是将src1中像素的第一个通道值取出来了.`Ch0 = _mm_or_si128(Ch0, _mm_shuffle_epi8(src2,_mm_setr_epi8(-1, -1, -1, -1, -1, -1, 2, 5, 8, 11, 14, -1, -1,-1, -1, -1)));`又把src2中的像素的第一通道值取出来,然后与前面求得的在进行与操作,所以现在Ch0中储存的就是src1和src2中的像素的第一个通道值,最后我们在把src3中的也取出来进行与操作,此时Ch0中就包含了本次循环所有处理像素的第一通道的值.接下来的Ch1,Ch2也是分别储存了第二,三通道的像素值.
+
 再下面跟的是阈值判断部分,这里主要使用了`_mm_cmpge_up_epu8(a,b)`和`_mm_cmpge_down_epu8(a,b)`两个函数,前者是将a中大于等于b的字节置为1,其它置为0,后者是小于等于的置为1,其它置0.这两个函数不在官方库中,官方只提供了有符号的比较函数,所以我们根据网上提供的代码:
+
 ```cpp
 #define _mm_cmpge_up_epu8(a, b) _mm_cmpeq_epi8(_mm_max_epu8(a, b), a) //大于等于的留下
 #define _mm_cmpge_down_epu8(a, b) _mm_cmpeq_epi8(_mm_min_epu8(a, b), a) //小于等于的留下
