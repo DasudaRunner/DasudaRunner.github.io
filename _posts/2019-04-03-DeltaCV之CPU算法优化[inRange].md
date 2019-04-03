@@ -19,7 +19,7 @@ excerpt: 这篇文章我们先来认识一下DeltaCV中CPU上做的相关优化�
 ## OpenCV中的inRange()
 OpenCV中的inRange()函数常常用来对图像的各个通道进行阈值分割，但是当图像尺寸过大时，该步骤较为耗时，故我们使用SIMD指令集的并行处理能力来提升像素的处理效率。
 
-###　函数原型
+### 函数原型
 ```cpp
 void inRange(InputArray src, InputArray lowerb, InputArray upperb, OutputArray dst)
 ```
@@ -179,8 +179,3 @@ for (int j = blockSize * block * channel; j < height * width; ++j, src += channe
 	}
 }
 ```
-
-
-
-
-
