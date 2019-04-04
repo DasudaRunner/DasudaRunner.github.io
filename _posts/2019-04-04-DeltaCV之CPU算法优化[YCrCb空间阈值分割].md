@@ -182,9 +182,12 @@ Cb = (V_B_WT * Blue + V_G_WT * Green + V_R_WT * Red + 257 * HalfV) >> Shift;
 处理1000次取平均值
 
 Image Size: 1024 x 1280（H x W）
-| Function | OpenCV/ms | DeltaCV/ms | Speed-up |
-|:-:|:-:|:-:|:-:|
-|ycrcbWithSeg|6.68 - 6.75 |0.88 - 0.90|7.4 - 7.6|
+
+opencv函数耗时: 6.68 - 6.75 ms
+
+DeltaCV函数耗时: 0.88 - 0.90 ms
+
+加速比: 7.4 - 7.6
 
 
 
