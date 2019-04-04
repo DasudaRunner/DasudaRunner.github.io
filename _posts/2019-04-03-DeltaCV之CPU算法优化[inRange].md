@@ -182,3 +182,10 @@ for (int j = blockSize * block * channel; j < height * width; ++j, src += channe
 	}
 }
 ```
+### 性能对比
+处理1000次取平均值
+
+Image Size: 1024 x 1280（H x W）
+| Function | OpenCV/ms | DeltaCV/ms | Speed-up |
+|:-:|:-:|:-:|:-:|
+|inRange|1.06 - 1.18|0.29 - 0.30|3.5 - 4.0|
