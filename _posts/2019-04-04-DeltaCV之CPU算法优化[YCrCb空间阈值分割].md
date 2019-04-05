@@ -8,16 +8,16 @@ tag:
 - DeltaCV
 - SSE
 - SIMD
-excerpt: 这篇文章我们先来认识一下DeltaCV中CPU上做的相关优化工作，使用SSE指令集优化RGB转YCrCb颜色空间过程,并进行阈值分割。'\[latex\]'
+excerpt: 这篇文章我们先来认识一下DeltaCV中CPU上做的相关优化工作，使用SSE指令集优化RGB转YCrCb颜色空间过程,并进行阈值分割。
 
 ---
 * 目录
 {:toc}
-这篇文章我们先来认识一下DeltaCV中CPU上做的相关优化工作，使用SSE指令集优化RGB转YCrCb颜色空间过程,并进行阈值分割。
+这篇文章我们先来认识一下DeltaCV中CPU上做的相关优化工作，使用SSE指令集优化RGB转YCrCb颜色空间过程,并进行阈值分割。'\[latex\]'
 
 ## OpenCV中的函数
 
-在OpenCV中完成RGB图像在YCrCb空间的阈值分割,需要用到两个函数,cv::cvtColor(颜色空间转换)及cv::inRange(阈值处理),.
+在OpenCV中完成RGB图像在YCrCb空间的阈值分割,需要用到两个函数,cv::cvtColor(颜色空间转换)及cv::inRange(阈值处理).\[latex\]
 
 ### 函数原型
 ```cpp
