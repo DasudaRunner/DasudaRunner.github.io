@@ -13,7 +13,17 @@ excerpt: 这篇文章我们先来认识一下DeltaCV中CPU上做的相关优化�
 ---
 * 目录
 {:toc}
-这篇文章我们先来认识一下DeltaCV中CPU上做的相关优化工作，使用SSE指令集优化RGB转YCrCb颜色空间过程,并进行阈值分割。$latex$
+这篇文章我们先来认识一下DeltaCV中CPU上做的相关优化工作，使用SSE指令集优化RGB转YCrCb颜色空间过程,并进行阈值分割。
+
+'$latex$'
+
+'\(latex\)'
+
+\(latex\)
+
+'\\(latex\\)'
+
+\\(latex\\)
 
 ## OpenCV中的函数
 
